@@ -1,0 +1,25 @@
+// Generic inline centering
+.text-center {
+	text-align: center;
+	justify-content: center;
+}
+
+// Block element "centering"
+.block-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vertical-center {
+	display: table-cell;
+	& > * {
+		vertical-align: middle;
+	}
+}
+
+.vertical-bottom {
+	display: table-cell;
+	& > * {
+		vertical-align: bottom;
+	}
+}

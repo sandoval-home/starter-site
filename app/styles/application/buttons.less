@@ -1,0 +1,140 @@
+/***************************/
+/* Button global variables */
+/***************************/
+@buttonBorderWidth: 1px;
+@buttonBorderRadius: 5px;
+
+// Button class (mixin)
+.button () {
+    /****************************/
+    /* Button private variables */
+    /****************************/
+    // Default size (unspecified size)
+    @buttonDefaultPadding: 5px 20px;
+    @buttonDefaultFontSize: @fontSize;
+    // Large
+    @buttonLargePadding: 10px 20px;
+    @buttonLargeFontSize: @fontSizeLarge;
+    // Small
+    @buttonSmallPadding: 3px 10px;
+    @buttonSmallFontSize: @fontSizeSmall;
+
+    // Default colors (unspecified type)
+    @buttonDefaultBGColor: @lightGrey;
+    @buttonDefaultFontColor: @black;
+    // Primary colors
+    @buttonPrimaryBGColor: @blue;
+    @buttonPrimaryFontColor: @white;
+    // Alert colors
+    @buttonAlertBGColor: @red;
+    @buttonAlertFontColor: @white;
+    // Cancel colors
+    @buttonCancelBGColor: @grey;
+    @buttonCancelFontColor: @white;
+
+    /*****************/
+    /* Button styles */
+    /*****************/
+    // Default attributes
+    padding: @buttonDefaultPadding;
+    font-size: @buttonDefaultFontSize;
+    border-radius: @buttonBorderRadius;
+    cursor: pointer;
+    .transition(all, .2s);
+    .fill-button(@buttonDefaultBGColor, @buttonDefaultFontColor);
+    .ghost-button(@buttonDefaultFontColor);
+    .ghost-fill-button(@buttonDefaultFontColor, @white);
+
+    // Sizes
+    &.btn-large {
+        padding: @buttonLargePadding;
+        font-size: @buttonLargeFontSize;
+    }
+    &.btn-small {
+        padding: @buttonSmallPadding;
+        font-size: @buttonSmallFontSize;
+    }
+
+    // Color types
+    &.btn-primary {
+        .fill-button(@buttonPrimaryBGColor, @buttonPrimaryFontColor);
+        .ghost-button(@buttonPrimaryBGColor);
+        .ghost-fill-button(@buttonPrimaryBGColor, @buttonPrimaryFontColor);
+    }
+    &.btn-alert {
+        .fill-button(@buttonAlertBGColor, @buttonAlertFontColor);
+        .ghost-button(@buttonAlertBGColor);
+        .ghost-fill-button(@buttonAlertBGColor, @buttonAlertFontColor);
+    }
+    &.btn-cancel {
+        .fill-button(@buttonCancelBGColor, @buttonCancelFontColor);
+        .ghost-button(@buttonCancelBGColor);
+        .ghost-fill-button(@buttonCancelBGColor, @buttonCancelFontColor);
+    }
+
+    /*****************/
+    /* Button mixins */
+    /*****************/
+    // Create the standard fill button
+    .fill-button (@buttonBGColor, @buttonFontColor) {
+        // Standard fill
+        border: @buttonBorderWidth solid @buttonBGColor;
+        background-color: @buttonBGColor;
+        color: @buttonFontColor;
+        .anchor-override(@buttonFontColor);
+
+        &:hover {
+            border-color: darken(@buttonBGColor, 8%);
+            background-color: darken(@buttonBGColor, 8%);
+        }
+    }
+
+    // Create the ghost button
+    .ghost-button (@buttonFontColor) {
+        &.btn-ghost {
+            border-color: @buttonFontColor;
+            background-color: transparent;
+            color: @buttonFontColor;
+            .anchor-override(@buttonFontColor);
+
+            &:hover {
+                border-color: darken(@buttonFontColor, 8%);
+                background-color: fadeout(@white, 65%);
+                color: darken(@buttonFontColor, 8%);
+            }
+        }
+    }
+
+    // Create the ghost-fill button
+    .ghost-fill-button (@buttonFontColor, @buttonBGColor) {
+        &.btn-ghost-fill {
+            border-color: @buttonFontColor;
+            background-color: transparent;
+            color: @buttonFontColor;
+            .anchor-override(@buttonFontColor);
+
+            &:hover {
+                border-color: @buttonFontColor;
+                background-color: @buttonFontColor;
+                color: @buttonBGColor;
+            }
+        }
+    }
+
+    // Anchor element specificity overrides.
+    // Prevents <a> styles from interfering.
+    .anchor-override (@fontColor) {
+        &:link, &:active, &:visited, &:hover {
+            text-decoration: none;
+            color: @fontColor;
+        }
+    }
+
+}
+
+/********************************************/
+/* Apply button styling to desired elements */
+/********************************************/
+button, input[type="submit"], .btn {
+    .button();
+}

@@ -1,0 +1,60 @@
+/*************************/
+/* Form global variables */
+/*************************/
+
+
+// Form container
+form {
+    /**************************/
+    /* Form private variables */
+    /**************************/
+    @inputHeight: 38px;
+    @inputFontSize: @fontSize;
+    @inputBorderRadius: 4px;
+    @inputMinPadding: 6px;
+    @inputBGColor: @white;
+    @inputBorderWidth: 1px;
+    @inputBorderColor: @lightGrey;
+    @inputActiveBorderColor: @lightBlue;
+
+    /***************/
+    /* Form styles */
+    /***************/
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="text"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    textarea,
+    select {
+        padding: @inputMinPadding 10px;
+        height: @inputHeight;
+        background-color: @inputBGColor;
+        border: @inputBorderWidth solid @inputBorderColor;
+        border-radius: @inputBorderRadius;
+        font-size: @inputFontSize;
+
+        &:focus {
+            border: @inputBorderWidth solid @inputActiveBorderColor;
+        }
+    }
+
+    select {
+        position: relative;
+        padding-right: 30px;
+    }
+
+    textarea {
+        min-height: 65px;
+        padding-top: @inputMinPadding;
+        padding-bottom: @inputMinPadding;
+    }
+
+    /***************/
+    /* Form mixins */
+    /***************/
+
+
+}

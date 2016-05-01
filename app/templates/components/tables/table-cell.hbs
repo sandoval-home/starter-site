@@ -1,0 +1,7 @@
+{{#if isDatetime}}
+    {{formatDatetime cellValue displayFormat}}
+{{else if isNumber}}
+    {{formatNumber cellValue displayFormat}}
+{{else}}
+    {{cellValue}}
+{{/if}}

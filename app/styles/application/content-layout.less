@@ -1,0 +1,74 @@
+/********************/
+/* Global variables */
+/********************/
+
+
+// @TODO: Styleguide
+&.save-button-row,
+&.cancel-button-row,
+&.delete-button-row {
+    background-color: transparent;
+    .transition(all, .4s);
+}
+&.save-button-row-hightlight,
+&.cancel-button-row-hightlight,
+&.delete-button-row-hightlight {
+    border-radius: 10px;
+    padding: 5px 0;
+    .transition(all, .4s);
+
+    &.save-button-row-hightlight {
+        background-color: #FF944E;
+    }
+    &.cancel-button-row-hightlight {
+        background-color: darken(purple, 6%);
+    }
+    &.delete-button-row-hightlight {
+        background-color: lighten(#066954, 15%);
+    }
+}
+
+// @TODO: Styleguide
+&.col-bg {
+    text-align: center;
+    border-radius: 5px;
+    background-color: @lightGrey;
+}
+
+// Flexgrid box content
+.box {
+
+    & > * {
+        margin-bottom: 5px;
+    }
+}
+
+// <section> container
+section {
+    /*******************************/
+    /* <section> private variables */
+    /*******************************/
+
+    /********************/
+    /* <section> styles */
+    /********************/
+    width: 95%;
+    margin: 0 auto 30px auto;
+
+    // <section> header
+    header {
+        margin-bottom: 20px
+    }
+
+    // <section> hr
+    hr {
+        width: 50%;
+        height: 2px;
+        .oneSidedHorizontalGradient(@midGrey, @white);
+    }
+
+    // <section> top-level rows
+    & > .row {
+        margin-bottom: 20px;
+    }
+}

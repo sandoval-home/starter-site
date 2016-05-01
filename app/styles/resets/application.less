@@ -1,0 +1,125 @@
+/**
+ * Application Reset
+ *
+ * Used to set application specific styles on base elements.
+ */
+html, body {
+    position: relative;
+    background-color: @bodyBGColor;
+    font-family: @fontFamily;
+    font-size: @fontSize;
+    color: @fontColor;
+    margin: 0 auto;
+}
+
+input, select, textarea, button {
+    font-family: @fontFamily;
+    color: @fontColor;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+h1 { font-size: @h1FontSize }
+h2 { font-size: @h2FontSize }
+h3 { font-size: @h3FontSize }
+h4 { font-size: @h4FontSize }
+h5 { font-size: @h5FontSize }
+h6 { font-size: @h6FontSize }
+
+ul {
+    list-style-type: none;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+    position: relative;
+    color: @linkColor;
+	text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+a:not(.btn):before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: @linkColor;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+p {
+    padding: 10px 0;
+}
+
+code {
+    padding: .2rem .5rem;
+    margin: 0 .2rem;
+    font-size: 90%;
+    white-space: nowrap;
+    background: #F1F1F1;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+}
+
+pre {
+    margin-top: 5px;
+
+    & > code {
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        white-space: pre;
+    }
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+    box-shadow: none;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+fieldset {
+    padding: 0;
+    border-width: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline;
+}

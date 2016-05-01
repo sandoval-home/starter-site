@@ -1,0 +1,42 @@
+{{! Related UI components before the table (search, pagination, etc) }}
+{{tables/table-actions-before}}
+
+<table>
+    {{! Column styling }}
+    <colgroup>
+        {{#each colWidths as |widthClass|}}
+            {{#if widthClass}}
+                <col class="{{widthClass}}"/>
+            {{else}}
+                <col />
+            {{/if}}
+        {{/each}}
+    </colgroup>
+    {{! Table Header }}
+    {{#tables/table-header}}
+        {{#each fields as |field|}}
+            {{! @TODO: Componentize }}
+            <th {{action "tableSort" field}}>
+                {{field.label}}
+                <span class="sort-dir">
+                    {{#if field.isSortedAsc}}
+                        {{fa-icon "caret-down"}}
+                    {{else if field.isSortedDesc}}
+                        {{fa-icon "caret-up"}}
+                    {{/if}}
+                </span>
+            </th>
+        {{/each}}
+    {{/tables/table-header}}
+    {{! Table Body }}
+    {{#tables/table-body}}
+        {{#each sortedAndFiltered as |record|}}
+            {{tables/table-row record=record fields=fields}}
+        {{/each}}
+    {{/tables/table-body}}
+    {{! Table Footer }}
+    {{! @TODO }}
+</table>
+
+{{! Related UI components after the table (search, pagination, etc) }}
+{{tables/table-actions-before}}

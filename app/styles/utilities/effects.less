@@ -1,0 +1,12 @@
+/**
+ * Cross-browser simple transition
+ *
+ * @param {property|all} @property
+ * @param {duration}     @duration
+ */
+.transition (@property, @duration) {
+    -webkit-transition: @property @duration ease-in-out;
+    -moz-transition: @property @duration ease-in-out;
+    -o-transition: @property @duration ease-in-out;
+    transition: @property @duration ease-in-out;
+ }

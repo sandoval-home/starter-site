@@ -1,0 +1,50 @@
+// Flexbox
+.flex() {
+    display: -webkit-box;  /* OLD:       iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER:   IE 10 */
+    display: -webkit-flex; /* NEWER:     Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW/Spec   Firefox, Chrome, Opera */
+}
+
+.flex {
+    .flex();
+}
+
+// Item vertical alignment
+.flex-valign-items-center {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.flex-valign-items-top {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+}
+.flex-valign-items-bottom {
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+}
+// Self vertical alignment
+.flex-valign-self-center {
+    -webkit-align-self: center;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+.flex-valign-self-top {
+    -webkit-align-self: start;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: flex-start;
+}
+.flex-valign-self-bottom {
+    -webkit-align-self: end;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: flex-end;
+    align-self: flex-end;
+}

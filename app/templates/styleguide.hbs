@@ -1,0 +1,287 @@
+<section>
+    <header>
+        <h1>Starter App Styleguide</h1>
+    </header>
+    <!-- Typography -->
+    <section>
+        <header>
+            <h2>Typography</h2>
+            <hr />
+        </header>
+        <h3>Font</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <p>(Regular) The quick brown fox jumped over the lazy dog</p>
+                    <p><strong>(Bold) The quick brown fox jumped over the lazy dog</strong></p>
+                    <p><em>(Italic) The quick brown fox jumped over the lazy dog</em></p>
+                </div>
+            </div>
+        </div>
+        <h3>Headings</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <h5>Heading 5</h5>
+                    <h6>Heading 6</h6>
+                </div>
+            </div>
+        </div>
+        <h3>Links</h3>
+        <p><a>Follow this link</a></p>
+    </section>
+    <!-- Buttons -->
+    <section>
+        <header>
+            <h2>Buttons</h2>
+            <hr />
+        </header>
+        <h3>Anything can easily be a button...</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <button>&lt;button&gt;</button>
+                    <a class="btn">&lt;a class=&quot;btn&quot;&gt;</a>
+                    <input type="submit" value="&lt;input type=&quot;submit&quot;&gt;" />
+                    <span class="btn">&lt;span class=&quot;btn&quot;&gt;</span>
+                </div>
+            </div>
+        </div>
+        <h3>Size classes</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box vertical-bottom">
+                    <button class="btn-small">.btn-small</button>
+                    <button>(default)</button>
+                    <button class="btn-large">.btn-large</button>
+                </div>
+            </div>
+        </div>
+        <h3>Ghost classes</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box vertical-bottom">
+                    <button class="btn-ghost btn-small">.btn-ghost</button>
+                    <button class="btn-ghost">.btn-ghost</button>
+                    <button class="btn-ghost btn-large">.btn-ghost</button>
+                    <button class="btn-ghost-fill btn-small">.btn-ghost-fill</button>
+                    <button class="btn-ghost-fill">.btn-ghost-fill</button>
+                    <button class="btn-ghost-fill btn-large">.btn-ghost-fill</button>
+                </div>
+            </div>
+        </div>
+        <h3>Ember components</h3><br />
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    These Handlebars expressions:
+                    <pre><code>&#123;&#123;buttons/save-button&#125;&#125;
+&#123;&#123;buttons/cancel-button&#125;&#125;
+&#123;&#123;buttons/delete-button&#125;&#125;</code></pre>
+                    give you the following button components out-of-the-box:
+                </div>
+            </div>
+        </div>
+        <div class="row middle-xs {{saveRowClass}}">
+            <div class="col-xs-8">
+                <div class="box vertical-bottom">
+                    {{buttons/save-button classNames="btn-small"}}
+                    {{buttons/save-button}}
+                    {{buttons/save-button classNames="btn-large"}}
+                    {{buttons/save-button classNames="btn-ghost btn-small"}}
+                    {{buttons/save-button classNames="btn-ghost"}}
+                    {{buttons/save-button classNames="btn-ghost btn-large"}}
+                    {{buttons/save-button classNames="btn-ghost-fill btn-small"}}
+                    {{buttons/save-button classNames="btn-ghost-fill"}}
+                    {{buttons/save-button classNames="btn-ghost-fill btn-large"}}
+                </div>
+            </div>
+            <div class="col-xs">
+                <div class="box">
+                    <a {{action "updateRowBackground" "save"}}>[ {{saveRowActionName}} row background ]</a>
+                </div>
+            </div>
+        </div>
+        <div class="row middle-xs {{cancelRowClass}}">
+            <div class="col-xs-8">
+                <div class="box vertical-bottom">
+                    {{buttons/cancel-button classNames="btn-small"}}
+                    {{buttons/cancel-button}}
+                    {{buttons/cancel-button classNames="btn-large"}}
+                    {{buttons/cancel-button classNames="btn-ghost btn-small"}}
+                    {{buttons/cancel-button classNames="btn-ghost"}}
+                    {{buttons/cancel-button classNames="btn-ghost btn-large"}}
+                    {{buttons/cancel-button classNames="btn-ghost-fill btn-small"}}
+                    {{buttons/cancel-button classNames="btn-ghost-fill"}}
+                    {{buttons/cancel-button classNames="btn-ghost-fill btn-large"}}
+                </div>
+            </div>
+            <div class="col-xs">
+                <div class="box">
+                    <a {{action "updateRowBackground" "cancel"}}>[ {{cancelRowActionName}} row background ]</a>
+                </div>
+            </div>
+        </div>
+        <div class="row middle-xs {{deleteRowClass}}">
+            <div class="col-xs-8">
+                <div class="box vertical-bottom">
+                    {{buttons/delete-button classNames="btn-small"}}
+                    {{buttons/delete-button}}
+                    {{buttons/delete-button classNames="btn-large"}}
+                    {{buttons/delete-button classNames="btn-ghost btn-small"}}
+                    {{buttons/delete-button classNames="btn-ghost"}}
+                    {{buttons/delete-button classNames="btn-ghost btn-large"}}
+                    {{buttons/delete-button classNames="btn-ghost-fill btn-small"}}
+                    {{buttons/delete-button classNames="btn-ghost-fill"}}
+                    {{buttons/delete-button classNames="btn-ghost-fill btn-large"}}
+                </div>
+            </div>
+            <div class="col-xs">
+                <div class="box">
+                    <a {{action "updateRowBackground" "delete"}}>[ {{deleteRowActionName}} row background ]</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    Ember components take a <code>classNames</code> argument to apply the button classes:
+                    <pre><code>&#123;&#123;buttons/save-button classNames=&quot;btn-small&quot;&#125;&#125;
+&#123;&#123;buttons/save-button classNames=&quot;btn-large btn-ghost&quot;&#125;&#125;</code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    Ember components can take other arguments:
+                    <pre><code>&#123;&#123;buttons/save-button text=&quot;Update&quot;&#125;&#125;
+&#123;&#123;buttons/save-button icon=&quot;check-circle-o&quot;&#125;&#125;</code></pre>
+                    to produce elements like:
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    {{buttons/save-button text="Update"}}
+                    {{buttons/save-button icon="check-circle-o"}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tables -->
+    <section>
+        <header>
+            <h2>Tables</h2>
+            <hr />
+        </header>
+        <a {{action "toggleData"}}>{{table1DataAction}} data</a>
+        {{tables/table-component tableConfig=table1Config data=model}}
+    </section>
+    <!-- Grid -->
+    <section>
+        <header>
+            <h2>Grid</h2>
+            <hr />
+        </header>
+        The grid system is based on a 12 column layout
+        <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col-xs-1"&gt;One&lt;/div&gt;
+    &lt;div class="col-xs-11"&gt;Eleven&lt;/div&gt;
+&lt;/div&gt;</code></pre><br />
+        <div class="row">
+            <div class="col-xs-1">
+                <div class="box col-bg">
+                    One
+                </div>
+            </div>
+            <div class="col-xs-11">
+                <div class="box col-bg">
+                    Eleven
+                </div>
+            </div>
+        </div>
+        <h3>Continued to produce various responsive grids:</h3>
+        <div class="row">
+            <div class="col-xs-2">
+                <div class="box col-bg">
+                    Two
+                </div>
+            </div>
+            <div class="col-xs-10">
+                <div class="box col-bg">
+                    Ten
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="box col-bg">
+                    Three
+                </div>
+            </div>
+            <div class="col-xs-9">
+                <div class="box col-bg">
+                    Nine
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="box col-bg">
+                    Four
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <div class="box col-bg">
+                    Eight
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5">
+                <div class="box col-bg">
+                    Five
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <div class="box col-bg">
+                    Seven
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="box col-bg">
+                    Six
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="box col-bg">
+                    Six
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <header>
+            <h2>Forms</h2>
+            <hr />
+        </header>
+        <form>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <select><option>Select</option></select>
+                        <input type="text" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</section>
